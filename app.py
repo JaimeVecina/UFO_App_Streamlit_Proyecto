@@ -14,7 +14,7 @@ st.set_page_config(page_title="Cazadores de OVNIs" , layout="wide", page_icon="�
 
 #----------------------LECTURA DEL CSV------------------------------------------
 
-df = pd.read_csv(r"C:\Users\asus\OneDrive\Escritorio\Proyecto_Final\UFO_final_csv.csv")
+df = pd.read_csv("UFO_final_csv.csv")
 
 #----------------------EMPIEZA NUESTRA APP------------------------------------------
 
@@ -34,7 +34,7 @@ st.write(
 #----------------------SECCIONES------------------------------------------
 
 # Nueva Sección 0: Introducción
-with st.expander("Sección 0: Introducción"):
+with st.expander("Introducción"):
     st.markdown("## Introducción al Proyecto")
 
     # Texto de introducción
@@ -51,41 +51,41 @@ with st.expander("Sección 0: Introducción"):
     st.image(imagen_introduccion_path, caption="",width=900)
 
 # Nueva Sección 1: Contexto
-with st.expander("Sección 1: Contexto"):
+with st.expander("Contexto"):
     st.markdown("")
 
     # Ruta a la imagen PNG
-    Contexto_path = r"Fotos\Contexto.png"  # Ruta de la imagen
+    Contexto_path = "Fotos\Contexto.png"  # Ruta de la imagen
 
     # Mostrar la imagen
     st.image(Contexto_path, caption="", width=900, use_column_width=False)
 
 # Nueva Sección 2: Datos interesantes
-with st.expander("Sección 2: Datos interesantes"):
+with st.expander("Datos interesantes"):
     st.markdown("")
 
     # Ruta a la imagen PNG
-    Datos_interesantes_path = r"Fotos\Datos interesantes.png"  # Ruta de la imagen
+    Datos_interesantes_path = "Fotos\Datos interesantes.png"  # Ruta de la imagen
 
     # Mostrar la imagen
     st.image(Datos_interesantes_path, caption="", width=900, use_column_width=True)
 
 # Nueva Sección 3: Eventos
-with st.expander("Sección 3: Eventos"):
+with st.expander("Eventos"):
     st.markdown("")
 
     # Ruta a la imagen PNG
-    eventos_path = r"Fotos\Eventos.png"  # Ruta de la imagen
+    eventos_path = "Fotos\Eventos.png"  # Ruta de la imagen
 
     # Mostrar la imagen
     st.image(eventos_path, caption="Eventos", width=900, use_column_width=True)
 
 # Nueva Sección 4: Mapas
-with st.expander("Sección 4: Mapas"):
+with st.expander("Mapas"):
     st.markdown("### Mapa de calor")
 
     # Ruta al primer archivo HTML del mapa
-    heatmap_html_path = r"Fotos\heatmap.html"
+    heatmap_html_path = "Fotos\heatmap.html"
 
     # Mostrar el primer mapa interactivo directamente desde el archivo HTML usando st.components.v1.html
     st.components.v1.html(open(heatmap_html_path, "r", encoding="utf-8").read(), width=1080, height=500, scrolling=False)
@@ -93,7 +93,7 @@ with st.expander("Sección 4: Mapas"):
     st.text("- Estados Unidos cuenta con más de 70.000 avistamientos")
 
     # Ruta al segundo archivo HTML del mapa
-    bolamundo_html_path = r"Fotos\bolamundo.html"
+    bolamundo_html_path = "Fotos\mundo.html"
 
     # Mostrar el segundo mapa interactivo directamente desde el archivo HTML usando st.components.v1.html
     st.components.v1.html(open(bolamundo_html_path, "r", encoding="utf-8").read(), width=1090, height=600, scrolling=False)
@@ -103,7 +103,7 @@ with st.expander("Sección 4: Mapas"):
 
 
     # Ruta al tercer archivo HTML del mapa
-    Europa_html_path = r"Fotos\Europa.html"
+    Europa_html_path = "Fotos\Europa.html"
 
     # Mostrar el tercer mapa interactivo directamente desde el archivo HTML usando st.components.v1.html
     st.components.v1.html(open(Europa_html_path, "r", encoding="utf-8").read(), width=1080, height=600, scrolling=False)
@@ -112,89 +112,93 @@ with st.expander("Sección 4: Mapas"):
     st.text("Total de 74 avistamientos")
 
     # Ruta al cuarto archivo HTML del mapa
-    España_html_path = r"Fotos\España.html"
+    España_html_path = "Fotos\España.html"
 
     # Mostrar el tercer mapa interactivo directamente desde el archivo HTML usando st.components.v1.html
     st.components.v1.html(open(España_html_path, "r", encoding="utf-8").read(), width=1080, height=600, scrolling=False)
 
 # Nueva Sección 5: España y Andalucía
-with st.expander("Sección 5: España y Andalucía"):
+with st.expander("España y Andalucía"):
     st.markdown("")
 
     # Dividimos el espacio en dos columnas
     col1, col2 = st.columns(2)
 
     # Ruta a la imagen PNG
-    eventos_path = r"Fotos\Avistamientos por provincia.png"  # Ruta de la imagen
+    eventos_path = "Fotos\Avistamientos por provincia.png"  # Ruta de la imagen
 
     # Mostrar la imagen en la primera columna con ancho fijo
     col1.image(eventos_path, caption="", width=550, use_column_width=True)
 
         # Ruta a la imagen PNG
-    eventos_path = r"Fotos\Avistamientos Andalucia.png"  # Ruta de la imagen
+    eventos_path = "Fotos\Avistamientos Andalucia.png"  # Ruta de la imagen
 
     # Mostrar la imagen
     col2.image(eventos_path, caption="", width=550, use_column_width=True)
 
 # Nueva Sección 6: Época y mes
-with st.expander("Sección 6: Época y mes"):
+with st.expander("Época y mes"):
     st.markdown("")
 
     # Dividimos el espacio en dos columnas
     col1, col2 = st.columns(2)
 
     # Ruta a la imagen PNG para la época del año
-    imagen_epoca_path = r"Fotos\Época del año.png"  # Ruta de la imagen
+    imagen_epoca_path = "Fotos\Época del año.png"  # Ruta de la imagen
 
     # Mostrar la imagen
     col1.image(imagen_epoca_path, caption="", width=550, use_column_width=True)
 
     # Ruta a la imagen PNG para el mes del año
-    imagen_mes_path = r"Fotos\Mes del año.png"  # Ruta de la imagen
+    imagen_mes_path = "Fotos\Mes del año.png"  # Ruta de la imagen
 
     # Mostrar la imagen
     col2.image(imagen_mes_path, caption="", width=550, use_column_width=True)
 
 # Nueva Sección 7: Día y hora
-with st.expander("Sección 7: Día y hora"):
+with st.expander("Día y hora"):
     st.markdown("")
 
     # Dividimos el espacio en dos columnas
     col1, col2 = st.columns(2)
 
     # Ruta a la imagen PNG
-    eventos_path = r"Fotos\Día de la semana.png"  # Ruta de la imagen
+    eventos_path = "Fotos\Día de la semana.png"  # Ruta de la imagen
 
     # Mostrar la imagen
     col1.image(eventos_path, caption="", width=550, use_column_width=True)
 
         # Ruta a la imagen PNG
-    eventos_path = r"Fotos\Horas del dia.png"  # Ruta de la imagen
+    eventos_path = "Fotos\Horas del dia.png"  # Ruta de la imagen
 
     # Mostrar la imagen
     col2.image(eventos_path, caption="", width=550, use_column_width=True)
 
 # Nueva Sección 8: Tipos de ovnis
-with st.expander("Sección 8 Tipos de OVNIs"):
+with st.expander("Tipos de OVNIs"):
     st.markdown("")
 
     # Dividimos el espacio en dos columnas
     col1, col2 = st.columns(2)
 
     # Ruta a la imagen PNG
-    tipos_ovnis_png_path = r"Fotos\Tipos Ovnis Treemap.png"
+    tipos_ovnis_png_path = "Fotos\Tipos Ovnis Treemap.png"
 
     # Mostrar el otro gráfico interactivo directamente desde el archivo HTML usando st.components.v1.html
     col1.image(tipos_ovnis_png_path, caption="", width=550, use_column_width=True)
 
     # Ruta a la imagen PNG
-    imagen_top5_ovnis_path = r"Fotos\T-5-OVNIs.png"  # Ruta de la imagen
+    imagen_top5_ovnis_path = "Fotos\T-5-OVNIs.png"  # Ruta de la imagen
 
     # Mostrar la imagen
     col2.image(imagen_top5_ovnis_path, caption="", width=550, use_column_width=True)
 
-# Nueva Sección 9: Área 51
-with st.expander("Sección 9: Área 51"):
+# Nueva Sección 9: Aplicación
+with st.expander('Aplicación'):
+    st.markdown("")
+
+# Nueva Sección 10: Área 51
+with st.expander("Área 51"):
     # Agregamos el texto explicativo
     st.markdown("### **Información sobre el Área 51**:")
     st.write(
@@ -206,18 +210,18 @@ with st.expander("Sección 9: Área 51"):
     )
 
     # Mostrar el mapa (HTML)
-    area51_html_path = r"Fotos\Area51.html"
+    area51_html_path = "Fotos\Area51.html"
     st.components.v1.html(open(area51_html_path, "r", encoding="utf-8").read(), width=900, height=400, scrolling=False)
 
-# Nueva Sección 10: Minería de datos
-with st.expander("Sección 10: Minería de datos"):
+# Nueva Sección 11: Minería de datos
+with st.expander("Minería de datos"):
     st.markdown("")
 
     # Dividimos el espacio en dos columnas
     col1, col2= st.columns(2)
 
     # Ruta a la imagen PNG
-    eventos_path = r"Fotos\Mineria.png"  # Ruta de la imagen
+    eventos_path = "Fotos\Mineria.png"  # Ruta de la imagen
 
     # Mostrar la imagen en la primera columna
     col1.image(eventos_path, caption="", width=800, use_column_width=True)
@@ -292,11 +296,11 @@ st.sidebar.markdown(
 )
 
 # Ruta a las imágenes PNG
-imagen_triangular_path = r"Fotos\Ovni triangular.png"
-imagen_posibles_conos_path = r"Fotos\Posibles conos.jpg"
-imagen_disco_path = r"Fotos\Ovni disco.jpg"
-imagen_oval_path = r"Fotos\Oval.png"
-imagen_bola_de_fuego_path = r"Fotos\Ovni Bola de fuego.png"
+imagen_triangular_path = "Fotos\Ovni triangular.png"
+imagen_posibles_conos_path = "Fotos\Posibles conos.jpg"
+imagen_disco_path = "Fotos\Ovni disco.jpg"
+imagen_oval_path = "Fotos\Oval.png"
+imagen_bola_de_fuego_path = "Fotos\Ovni Bola de fuego.png"
 
 # Nueva Sección en la barra lateral: Tipos de ovnis e Imágenes
 st.sidebar.markdown("---")
@@ -349,10 +353,22 @@ if st.sidebar.button("Resultados"):
 st.sidebar.markdown("---")
 st.sidebar.markdown("### ¡Gracias por explorar el mundo de los OVNIs con nosotros! 👽")
 st.sidebar.markdown("Si te ha gustado nuestro proyecto, ¡compártelo!✨")
-st.sidebar.markdown(f"[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jaime-vecina-montesinos-b372802a0/)")
+
+# Enlace a LinkedIn - Iraitz Garmendia Alberdi
+st.sidebar.markdown(f"[![LinkedIn - Iraitz Garmendia Alberdi](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/iraitz-garmendia-alberdi-5ba782276/)")
+st.sidebar.text("Iraitz Garmendia Alberdi")
+# Enlace a LinkedIn - Jaime Vecina Montesinos
+st.sidebar.markdown(f"[![LinkedIn - Jaime Vecina Montesinos](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jaime-vecina-montesinos-b372802a0/)")
+st.sidebar.text("Jaime Vecina Montesinos")
+# Enlace a LinkedIn - Javier Muñoz Ballesteros
+st.sidebar.markdown(f"[![LinkedIn - Javier Muñoz Ballesteros](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/javier-munoz-ballesteros/)")
+st.sidebar.text("Javier Muñoz Ballesteros")
+
 
 # Fuentes
 st.sidebar.markdown("---")
 st.sidebar.markdown("### Fuentes")
 st.sidebar.markdown(f"https://nuforc.org/")
 st.sidebar.markdown(f"https://www.kaggle.com/datasets/NUFORC/ufo-sightings")
+st.sidebar.markdown(f"https://creativecommons.org/licenses/by-nc/3.0/")
+st.sidebar.markdown(f"https://es.quora.com/Cu%C3%A1l-fue-la-primera-fotograf%C3%ADa-de-un-ovni")
