@@ -275,9 +275,6 @@ with st.expander("Encuesta"):
         st.success(f"Pregunta 4: {testimonio}")
         st.success(f"Pregunta 5: {respuesta_pregunta_5}")
 
-        # Calculamos y mostramos la media de la Pregunta 5
-        media_pregunta_5 = respuesta_pregunta_5
-        st.write(f"Media de Puntuación (Pregunta 5): {media_pregunta_5:.2f}")
         st.markdown("<h3 style='color: white; font-size: 2em;'>Muchas gracias y hasta la próxima 🖖</h3>", unsafe_allow_html=True)
 
         # Almacena las respuestas en un archivo CSV
