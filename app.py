@@ -9,8 +9,8 @@ import streamlit.components.v1 as components
 
 #-----------------CONFIGURACION DE PAGINA--------------------------
 
+custom_theme =
 [theme]
-
 primaryColor="#FAFAFA"
 backgroundColor="#0E1117"
 secondaryBackgroundColor="#262730"
