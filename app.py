@@ -17,6 +17,8 @@ secondaryBackgroundColor="#262730"
 textColor="#FAFAFA"
 font="sans serif"
 """
+st.markdown(custom_theme, unsafe_allow_html=True)
+
 
 st.set_page_config(page_title="Cazadores de OVNIs" , layout="wide", page_icon="🛸", initial_sidebar_state="collapsed")
 
