@@ -20,6 +20,7 @@ Flask
 gunicorn
 pyyaml
 fire
+pycaret
 
 # Miscelánea
 yfinance
