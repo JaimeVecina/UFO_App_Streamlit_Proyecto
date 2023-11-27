@@ -20,7 +20,7 @@ Flask
 gunicorn
 pyyaml
 fire
-pycaret
+pycaret==3.1.0
 
 # Miscelánea
 yfinance
