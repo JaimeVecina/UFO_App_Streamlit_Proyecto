@@ -6,6 +6,8 @@ import pandas as pd
 import seaborn as sns
 import plotly_express as px
 import streamlit.components.v1 as components
+from pycaret.regression import load_model, predict_model
+import calendar
 
 #-----------------CONFIGURACION DE PAGINA--------------------------
 
@@ -192,9 +194,39 @@ with st.expander("Tipos de OVNIs"):
     # Mostrar la imagen
     col2.image(imagen_top5_ovnis_path, caption="", width=550, use_column_width=True)
 
-# Nueva Sección 9: Aplicación
-with st.expander('Aplicación'):
-    st.markdown("")
+# Nueva Sección 9: Aplicación de predicción de duración de avistamiento de OVNIs
+with st.expander('Aplicación de predicción'):
+    st.markdown("## Predicción de duración del avistamiento de OVNIs")
+    
+    meses_numeros = {nombre: num for num, nombre in enumerate(calendar.month_name[1:], start=1)}
+
+    # Leemos el modelo
+    model = load_model("modelo_tiempo1")
+
+    # Añadir controles de entrada
+    meses = list(calendar.month_name[1:])
+    month = st.selectbox('Mes', meses)
+    hour = st.slider('Hora', df['Hour'].min(), df['Hour'].max(), int(df['Hour'].mean()))
+    country = st.selectbox('País', df['Country'].unique())
+    UFO_shape = st.selectbox('Forma de OVNI', df['UFO_shape'].unique())
+
+    # Función para predecir la duración del avistamiento
+    def predict_duration(month, hour, country, UFO_shape):
+        mes_numero = meses_numeros[month]
+        input_data = pd.DataFrame({
+            'Month': [mes_numero],
+            'Hour': [hour],
+            'Country': [country],
+            'UFO_shape': [UFO_shape]
+        })
+        prediction = model.predict(input_data)[0]
+        return prediction
+
+    # Predecir la duración del avistamiento al hacer clic en el botón
+    if st.button('Predecir Duración'):
+        prediction = predict_duration(month, hour, country, UFO_shape)
+        st.success(f'La predicción de duración es: {prediction:.2f} segundos')
+
 
 # Nueva Sección 10: Área 51
 with st.expander("Área 51"):
@@ -274,14 +306,11 @@ with st.expander("Encuesta"):
         st.success(f"Pregunta 3: {respuesta_pregunta_3}")
         st.success(f"Pregunta 4: {testimonio}")
         st.success(f"Pregunta 5: {respuesta_pregunta_5}")
-
-        # Calculamos y mostramos la media de la Pregunta 5
-        media_pregunta_5 = respuesta_pregunta_5
-        st.write(f"Media de Puntuación (Pregunta 5): {media_pregunta_5:.2f}")
+        
         st.markdown("<h3 style='color: white; font-size: 2em;'>Muchas gracias y hasta la próxima 🖖</h3>", unsafe_allow_html=True)
 
         # Almacena las respuestas en un archivo CSV
-        with open(ruta_csv_respuestas, 'a') as file:
+        with open(ruta_csv_respuestas, 'a', encoding='utf-8', newline='') as file:
             file.write(f"{nombre_usuario},{respuesta_pregunta_1},{respuesta_pregunta_2},{respuesta_pregunta_3},{testimonio},{respuesta_pregunta_5}\n")
 
 #----------------------SIDEBAR------------------------------------------
