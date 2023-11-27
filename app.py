@@ -1,6 +1,5 @@
 #-----------------------------LIBRERIAS-----------------------------
 import streamlit as st
-import matplotlib as plt
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -22,7 +21,7 @@ df = pd.read_csv("UFO_final_csv.csv")
 st.markdown("<h1 style='color: white; font-size: 4em;'>Cazadores de OVNIs 👽</h1>", unsafe_allow_html=True)
 
 # Imagen de portada
-imagen_portada_path = r"Fotos\OvniPortada.png"
+imagen_portada_path = "Fotos/OvniPortada.png"
 st.image(imagen_portada_path, caption="Explorando el misterioso mundo de los OVNIs", width=900)
 
 # Texto de presentación
@@ -47,7 +46,7 @@ with st.expander("Introducción"):
     )
 
     # Imagen introduccion
-    imagen_introduccion_path = r"Fotos\OvniIntroduccion.png"  # Ruta de la imagen
+    imagen_introduccion_path = "Fotos/OvniIntroduccion.png"  # Ruta de la imagen
     st.image(imagen_introduccion_path, caption="",width=900)
 
 # Nueva Sección 1: Contexto
