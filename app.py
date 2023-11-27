@@ -9,15 +9,6 @@ import streamlit.components.v1 as components
 
 #-----------------CONFIGURACION DE PAGINA--------------------------
 
-custom_theme = """
-[theme]
-primaryColor="#FAFAFA"
-backgroundColor="#0E1117"
-secondaryBackgroundColor="#262730"
-textColor="#FAFAFA"
-font="sans serif"
-"""
-
 st.set_page_config(page_title="Cazadores de OVNIs" , layout="wide", page_icon="🛸", initial_sidebar_state="collapsed")
 
 #----------------------LECTURA DEL CSV------------------------------------------
