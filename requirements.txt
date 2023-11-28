@@ -4,7 +4,7 @@ pandas
 openpyxl
 
 # Visualizaciones
-matplotlib == 3.7.4
+matplotlib==3.7.4
 seaborn
 plotly-express
 
@@ -20,6 +20,7 @@ Flask
 gunicorn
 pyyaml
 fire
+pycaret==3.1.0
 
 # Miscelánea
 yfinance
