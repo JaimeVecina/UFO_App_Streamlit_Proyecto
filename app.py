@@ -315,9 +315,10 @@ with st.expander("Encuesta"):
         
         st.markdown("<h3 style='color: white; font-size: 2em;'>Muchas gracias y hasta la próxima 🖖</h3>", unsafe_allow_html=True)
 
-        # Almacena las respuestas en un archivo CSV
+         # Almacena las respuestas en un archivo CSV
         with open(ruta_csv_respuestas, 'a', encoding='utf-8', newline='') as file:
-            file.write(f"{nombre_usuario},{respuesta_pregunta_1},{respuesta_pregunta_2},{respuesta_pregunta_3},{testimonio},{respuesta_pregunta_5}\n")
+            writer = csv.writer(file)
+            writer.writerow([nombre_usuario, respuesta_pregunta_1, respuesta_pregunta_2, respuesta_pregunta_3, testimonio, respuesta_pregunta_5])
 
 #----------------------SIDEBAR------------------------------------------
 # Título de la barra lateral
@@ -397,7 +398,6 @@ st.sidebar.text("Jaime Vecina Montesinos")
 # Enlace a LinkedIn - Javier Muñoz Ballesteros
 st.sidebar.markdown(f"[![LinkedIn - Javier Muñoz Ballesteros](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/javier-munoz-ballesteros/)")
 st.sidebar.text("Javier Muñoz Ballesteros")
-
 
 # Fuentes
 st.sidebar.markdown("---")
