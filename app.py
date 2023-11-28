@@ -315,10 +315,9 @@ with st.expander("Encuesta"):
         
         st.markdown("<h3 style='color: white; font-size: 2em;'>Muchas gracias y hasta la próxima 🖖</h3>", unsafe_allow_html=True)
 
-         # Almacena las respuestas en un archivo CSV
+        # Almacena las respuestas en un archivo CSV
         with open(ruta_csv_respuestas, 'a', encoding='utf-8', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow([nombre_usuario, respuesta_pregunta_1, respuesta_pregunta_2, respuesta_pregunta_3, testimonio, respuesta_pregunta_5])
+            file.write(f"{nombre_usuario},{respuesta_pregunta_1},{respuesta_pregunta_2},{respuesta_pregunta_3},{testimonio},{respuesta_pregunta_5}\n")
 
 #----------------------SIDEBAR------------------------------------------
 # Título de la barra lateral
