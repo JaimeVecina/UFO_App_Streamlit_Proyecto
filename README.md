@@ -1,6 +1,6 @@
 # UFO App Streamlit 
 
-![OVNI_Imagen](OvniPortada.png)
+![OvniPortada](OvniPortada.png)
 
 Este repositorio se basa en un ejercicio libre con prepocesamiento de datos, EDA, trabajo con modelos predictivos, App de Streamlit y todo ello sobre un conjunto de datos de avistamientos de OVNIs en el mundo.
 
